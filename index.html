@@ -8,15 +8,17 @@
 </head>
 <body>
     <!-- Our web map and content will go here -->
-		<div id="map" style="width: 705px; height: 375px"></div>
+		<div id="map" style="width: 900px; height: 450px"></div>
 
 		<!-- Add the Leaflet JavaScript library -->
 		<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+		<script src="leaflet-providers.js"></script>
 		<script>
     // Create variable to hold map element, give initial settings to map
-    var map = L.map('map',{ center: [42.421875781898414, 11.630730345942334], zoom: 13.5});
+    var map = L.map('map',{ center: [42.41942864843529, 11.6294190496742], zoom: 13});
 		// Add OpenStreetMap tile layer to map element
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+
+L.tileLayer.provider('Esri.WorldImagery').addTo(map);
 // Create point feature for Necropoli dell'Osteria
 var myDataPoint = L.marker([42.43023874766906, 11.62472219784547]).addTo(map);
 
@@ -25,21 +27,21 @@ myDataPoint.bindPopup("<h3>Osteria</h3>", {autoClose:false}).openPopup();
 
 // Cuccumella
 var myDataPoint = L.marker([42.41457111412809, 11.642489269009173]).addTo(map);
-myDataPoint.bindPopup("<h3>Cuccumella</h3><p>Descr<br>Descr.</p>");
+myDataPoint.bindPopup("<h3>Cuccumella</h3>", {autoClose:false}).openPopup();
 // Polledrara
 var myDataPoint = L.marker([42.40238855115988, 11.641111097844703]).addTo(map);
-myDataPoint.bindPopup("<h3>Polledrara</h3><p>Descr<br>Descr.</p>");
+myDataPoint.bindPopup("<h3>Polledrara</h3>", {autoClose:false}).openPopup();
 // ponte rotto
 var myDataPoint = L.marker([42.418545511632985, 11.638658830687097]).addTo(map);
-myDataPoint.bindPopup("<h3>Ponte Rotto</h3><p>Descr<br>Descr.</p>");
+myDataPoint.bindPopup("<h3>Ponte Rotto</h3>", {autoClose:false}).openPopup();
 // tamariceto
 
 // cavalupo
 var myDataPoint = L.marker([42.43243366465093, 11.63381989763046]).addTo(map);
-myDataPoint.bindPopup("<h3>Cavalupo</h3><p>Descr<br>Descr.</p>");
+myDataPoint.bindPopup("<h3>Cavalupo</h3>", {autoClose:false}).openPopup();
 // poggio
 var myDataPoint = L.marker([42.43306813465257, 11.630508714397363]).addTo(map);
-myDataPoint.bindPopup("<h3>Poggio Mengarelli</h3><p>Descr<br>Descr.</p>");
+myDataPoint.bindPopup("<h3>Poggio Mengarelli</h3>", {autoClose:false}).openPopup();
 
 
 
